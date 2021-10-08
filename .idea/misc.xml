@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_folder_add.xml" value="0.1890625" />
         <entry key="app/src/main/res/drawable/main_button_style.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.25" />
         <entry key="app/src/main/res/xml/attr.xml" value="0.17291666666666666" />
       </map>
     </option>

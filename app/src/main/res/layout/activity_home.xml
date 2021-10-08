@@ -1,114 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="#F6FAFD"
+    android:background="#ecf3fb"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    tools:context=".ui.screens.HomeActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
-        android:background="@color/black">
+        android:text="E - imzo"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
-        <LinearLayout
-            android:id="@+id/addERIView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="24dp">
+    <android.widget.Button
+        android:id="@+id/btn1"
+        style="@style/button_style"
+        android:text="ERI qo'shish"
+        app:layout_constraintBottom_toTopOf="@id/btn2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="MissingConstraints"
+        />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ERI qo'shish"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
+    <android.widget.Button
+        android:id="@+id/btn2"
+        style="@style/button_style"
+        android:text="QR orqali qo'shish"
+        app:layout_constraintBottom_toTopOf="@id/btn3"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        tools:ignore="MissingConstraints" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_folder_add"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
-        android:background="@color/black">
-
-        <LinearLayout
-            android:id="@+id/addByQR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="QR orqali qo'shish"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_folder_add"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
-        android:background="@color/black">
-
-        <LinearLayout
-            android:id="@+id/addByNfc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="NFC orqali qo'shish"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_folder_add"/>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:text="Imzolash"
-        android:background="@drawable/bbbbb"
-        android:drawableRight="@drawable/ic_folder_add"
-        android:textColor="@color/white"
-        android:letterSpacing="1"/>
+    <android.widget.Button
+        android:id="@+id/btn3"
+        style="@style/button_style"
+        android:text="NFC orqali qo'shish"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn2"
+        tools:ignore="MissingConstraints" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
