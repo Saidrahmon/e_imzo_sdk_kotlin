@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e3f3fe"
+    android:background="@color/background_color"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.screens.HomeActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"/>
+
     <LinearLayout
+        android:id="@+id/cardHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn1">
+        app:layout_constraintBottom_toTopOf="@id/cardButtons">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/circleCard"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            app:cardCornerRadius="70dp"
-            >
+            app:cardCornerRadius="70dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,8 +52,7 @@
             android:layout_height="wrap_content"
             android:text="E - imzo sdk"
             android:textColor="#B3000000"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
 
         <TextView
@@ -54,41 +60,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="E - imzo sdk"
-            android:textColor="@color/black"
+            android:textColor="@color/text_color"
             android:textSize="24sp" />
 
 
     </LinearLayout>
 
-    <android.widget.Button
-        android:id="@+id/btn1"
-        style="@style/button_style"
-        android:drawableRight="@drawable/ic_folder_add"
-        android:text="ERI qo'shish"
-        app:layout_constraintBottom_toTopOf="@id/btn2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:id="@+id/cardButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/listEri"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader">
 
-    <android.widget.Button
-        android:id="@+id/btn2"
-        style="@style/button_style"
-        android:drawableRight="@drawable/ic_qr"
-        android:text="QR orqali qo'shish"
-        app:layout_constraintBottom_toTopOf="@id/btn3"
-        app:layout_constraintTop_toBottomOf="@id/btn1"
-        tools:ignore="MissingConstraints" />
+        <android.widget.Button
+            android:id="@+id/btn1"
+            style="@style/button_style"
+            android:drawableRight="@drawable/ic_folder_add"
+            android:text="ERI qo'shish"
+            android:textAllCaps="false"/>
 
-    <android.widget.Button
-        android:id="@+id/btn3"
-        style="@style/button_style"
-        android:drawableRight="@drawable/ic_nfc_2"
-        android:text="NFC orqali qo'shish"
-        android:textAllCaps="false"
-        android:textColor="#B3000000"
+        <android.widget.Button
+            android:id="@+id/btn3"
+            style="@style/button_style"
+            android:drawableRight="@drawable/ic_nfc_2"
+            android:text="NFC orqali qo'shish"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listEri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/cardButtons"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
